@@ -1,7 +1,7 @@
 #cette exercice a pour but de verifier la validitée d'un calandrier #
 
 try:   
-    valeur =int(input("entrer votre salaire annuelle"))
+    valeur =int(input("entrer votre salaire annuelle    "))
 except ValueError:
         print(" toute les variable d'entrées sont de type Int")
 
@@ -16,20 +16,21 @@ def vos_impots(valeur):
         imposé=valeur-158123
         valeur -=imposé
         impots += imposé*45/100
-    elif  valeur>=73517:
+    if  valeur>=73517:
         imposé=valeur-73517
         valeur -=imposé
         impots += imposé*41/100
-    elif  valeur>=25711:
+    if  valeur>=25711:
         imposé=valeur-25711
         valeur -=imposé
         impots += imposé*30/100
-    elif  valeur>=10085:
+        print(imposé)
+    if  valeur>=10085:
         imposé=valeur-10085
         valeur -=imposé
-        impots += imposé*10/100
+        impots += imposé*11/100
 
-    return print("vous allez payer "/impots/"d'impots" ) 
+    return print("vous allez payer "+str(impots) +"  d'impots" ) 
 
 
 vos_impots(valeur)
