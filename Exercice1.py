@@ -1,4 +1,4 @@
-#cette exercice a pour but de verifier la validitée d'un calandrier #
+#cette exercice a pour but de de créer une date et de vérifier sa validitée ou non #
 
 def bissextile (année):
     #   Cette fonction vérifie si une annnée est bissextile ou non (Antony.Guillot le 19/11/2021)#
@@ -47,7 +47,7 @@ def valide_date(numero_jour,numero_mois,année):
         int(année)
         int(numero_mois)
     except ValueError:
-        print("ils faut rentrer un numero de mois (inferieur a 12) et toute les variable d'entrées sont de type Int")
+        print(" toute les variable d'entrées sont de type Int")
 
     return numero_jour <= jour_mois(numero_mois,année) and numero_jour >= 1 
 
@@ -56,10 +56,14 @@ def creation_date():
     #Cette fonction propose la creation d'une date et sa vérification (Antony.Guillot le 19/11/2021)#
 
     #entré des donnée de la date#
-    numero_jour = int(input ("entré le numero du jour   "))
-    
-    numero_mois = int(input("entré le numero du mois    "))
-    numero_année = int(input("entré le numero de l'année    "))
+    try:
+        numero_jour = int(input ("entré le numero du jour   "))
+        
+        numero_mois = int(input("entré le numero du mois    "))
+        numero_année = int(input("entré le numero de l'année    "))
+    except ValueError:
+        print(" toute les variable d'entrées sont de type Int")
+
 
     if valide_date(numero_jour,numero_mois,numero_année ):
         return print("la date est valide")
